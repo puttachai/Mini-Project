@@ -3,8 +3,14 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css'
+import './Home.css'
 
 function Home() {
+
+  const [showModal, setShowModal] = useState(false);
+
+  const handleOpenModal = () => setShowModal(true);
+  const handleCloseModal = () => setShowModal(false);
 
 //     const [students, setStudents] = useState([]); // เก็บข้อมูลนักศึกษา
 //     const [selectedStudent, setSelectedStudent] = useState(null); // เก็บข้อมูลนักศึกษาที่ต้องการแก้ไข
@@ -107,9 +113,12 @@ const handleDelete = (id) => {
 
   return (
     <div className="container mt-5">
-      <h2 className="mb-4">Products</h2>
-      <button className="btn btn-primary me-2">Create Product</button>
-      <button className="btn btn-outline-primary">Refresh</button>
+    <h2 className="mb-4">Products</h2>
+    <button className="btn btn-primary me-2" onClick={handleOpenModal}>
+      Create Product
+    </button>
+    <button className="btn btn-outline-primary">Refresh</button>
+
       <div className="table-responsive mt-3">
         <table className="table table-striped">
           <thead className="table-dark">
@@ -163,7 +172,52 @@ const handleDelete = (id) => {
           </tbody>
         </table>
       </div>
-    </div>
+
+    {/* Popup Modal */}
+    {showModal && (
+      <div className="modal-overlay">
+        <div className="modal-content">
+          <h3>Create Product</h3>
+          <form className="style-lable">
+            <label>Name:</label>
+            <input type="text" className="form-control" />
+
+            <label>Brand:</label>
+            <input type="text" className="form-control" />
+
+            <label>Category:</label>
+            <select className="form-control">
+              <option>Other</option>
+              <option>Electronics</option>
+              <option>Clothing</option>
+            </select>
+
+            <label>Price:</label>
+            <input type="number" className="form-control" />
+
+            <label>Description:</label>
+            <textarea className="form-control"></textarea>
+
+            <label>Image:</label>
+            <input type="file" className="form-control" />
+
+            <div className="modal-buttons">
+              <button type="submit" className="btn btn-primary">
+                Submit
+              </button>
+              <button
+                type="button"
+                className="btn btn-secondary"
+                onClick={handleCloseModal}
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    )}
+  </div>
   );
 
 }
