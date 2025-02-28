@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import validation from "./Loginvalidation";
 
 import './Login.css';
+import './App.css';
 
 function Login() {
     const [values, setValues] = useState({

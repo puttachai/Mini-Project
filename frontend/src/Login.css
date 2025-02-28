@@ -1,4 +1,44 @@
+/* จัดให้อยู่ตรงกลางของหน้าจอ */
+.login-container {
+  display: flex;
+  justify-content: center; /* จัดให้อยู่ตรงกลางแนวนอน */
+  align-items: center; /* จัดให้อยู่ตรงกลางแนวตั้ง */
+  height: 100vh; /* ให้ความสูงเต็มจอ */
+  background-color: #f8f9fa; /* สีพื้นหลัง */
+}
 
-.text-position{
+/* ปรับขนาดฟอร์ม */
+.login-form {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+/* ปรับ input และปุ่มให้ดูดี */
+.form-control {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 0.8rem;
+  width: 100%;
+}
+
+.btn-primary {
+  /* padding: 0.8rem; */
+  font-size: 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-danger {
+  font-size: 0.9rem;
+  color: red;
+}
+
+.text-position {
   text-align: start;
 }

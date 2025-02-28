@@ -71,39 +71,3 @@ a:hover {
     background-color: #f9f9f9;
   }
 }
-
-/* Login Page Specific Styles */
-.login-container {
-  display: block;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  /* width: 50vh; */
-  justify-items: center;
-  /* background-color: #f1f1f1; */
-}
-
-.login-form {
-  width: 100%;
-  max-width: 500px;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: 10px 10px 10px 10px;
-  margin-top: 35%;
-}
-
-.form-control {
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  padding: 0.8rem;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-danger {
-  font-size: 0.9rem;
-  color: red;
-}
